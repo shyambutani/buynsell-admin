@@ -201,26 +201,26 @@
         var selected_city=null;
         {% if request.session.selected_state %}
             selected_state = "{{ request.session.selected_state }}";
-            alert(selected_state);
+            // alert(selected_state);
         {% endif %}
         {% if request.session.selected_city %}
             selected_city = "{{ request.session.selected_city }}";
-            alert(selected_city);
+            // alert(selected_city);
         {% endif %}
         {% if request.session.selected_category %}
             selected_category = "{{ request.session.selected_category }}";
-            alert(selected_category);
+            // alert(selected_category);
             $("#category").val(selected_category);
             getsub_cat();
         {% endif %}
         {% if request.session.selected_subcategory %}
             selected_subcategory = "{{ request.session.selected_subcategory }}";
-            alert(selected_subcategory);
+            // alert(selected_subcategory);
             $("#sub_category").val(selected_subcategory);
         {% endif %}
         {% if request.session.search_text %}
             search_text = "{{ request.session.search_text }}";
-            alert(search_text);
+            // alert(search_text);
             $("#search_text").val(search_text);
         {% endif %}
         function delete_ad(id)
