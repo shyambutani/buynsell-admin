@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    {%load static %}
+	<title>Admin</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        body {
+          background: #f1f1f1;
+          font-family: 'Open Sans', sans-serif;
+          line-height: 1.8;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="margin-bottom:10px;border-bottom: solid 1px #ddd;">
+         <a class="navbar-brand" href="/bands/admin"><span style="margin-left:100px;">BuyNSell-Admin</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText" style="margin-left:100px;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            
+          </li>
+        </ul>
+        <div>
+          <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/bands/updateadmin/">Edit Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bands/logout">Logout</a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+
+<div id="border1" align="center" style="padding-top:180px">
+    <div class="container">
+        <a href="/bands/onaddCategoryclick" class="btn btn-primary" style="width: 200px;height: 40px;">Add Category</a>
+        <div class="col-xs-12" style="height:10px;"></div>
+        <a href="/bands/deletecategory" class="btn btn-primary" style="width: 200px;height: 40px;">Delete Category</a>
+        <div class="col-xs-12" style="height:10px;"></div>
+        <a href="/bands/get_delete_ad/" class="btn btn-primary" style="width: 200px;height: 40px;">Delete Ad</a>
+        <div class="col-xs-12" style="height:10px;"></div>
+        <a href="/bands/updateadmin/" class="btn btn-primary" style="width: 200px;height: 40px;">Edit Profile</a>
+    </div>
+</div>
+</body>
+</html>

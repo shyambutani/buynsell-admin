@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'pp.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <style>
+body {
+  font-family: 'open sans';
+  overflow-x: hidden; }
+
+img {
+  max-width: 100%; }
+
+.preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (max-width: 996px) {
+    .preview {
+      margin-bottom: 20px; } }
+
+.preview-pic {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.preview-thumbnail.nav-tabs {
+  border: none;
+  margin-top: 15px; }
+  .preview-thumbnail.nav-tabs li {
+    width: 18%;
+    margin-right: 2.5%; }
+    .preview-thumbnail.nav-tabs li img {
+      max-width: 100%;
+      display: block; }
+    .preview-thumbnail.nav-tabs li a {
+      padding: 0;
+      margin: 0; }
+    .preview-thumbnail.nav-tabs li:last-of-type {
+      margin-right: 0; }
+
+.tab-content {
+  overflow: hidden; }
+  .tab-content img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+            animation-name: opacity;
+    -webkit-animation-duration: .3s;
+            animation-duration: .3s; }
+
+.card {
+  margin-top: 50px;
+  background: #eee;
+  padding: 3em;
+  line-height: 1.5em; }
+
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.colors {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.product-title, .price, .sizes, .colors {
+  text-transform: UPPERCASE;
+  font-weight: bold; }
+
+.checked, .price span {
+  color: #212529; }
+
+.product-title, .rating, .product-description, .price, .vote, .sizes {
+  margin-bottom: 15px; }
+
+.product-title {
+  margin-top: 0; }
+
+.size {
+  margin-right: 10px; }
+  .size:first-of-type {
+    margin-left: 40px; }
+
+.color {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 2em;
+  width: 2em;
+  border-radius: 2px; }
+  .color:first-of-type {
+    margin-left: 20px; }
+
+
+.not-available {
+  text-align: center;
+  line-height: 2em; }
+  .not-available:before {
+    font-family: fontawesome;
+    content: "\f00d";
+    color: #fff; }
+
+.orange {
+  background: #ff9f1a; }
+
+.green {
+  background: #85ad00; }
+
+.blue {
+  background: #0076ad; }
+
+.tooltip-inner {
+  padding: 1.3em; }
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+            transform: scale(3); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+            transform: scale(3); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="margin-bottom:10px;border-bottom: solid 1px #ddd;">
+            <a class="navbar-brand" href="/bands/admin/"><span style="margin-left:100px;">BuyNSell-Admin</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText" style="margin-left:100px;">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            </li>
+            </ul>
+            <div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                          <a class="nav-link" href="#">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                     </li>
+                 </ul>
+             </div>
+        </div>
+    </nav>
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						<div class="preview-pic tab-content">
+							{% if product_images.0 %}
+							<div class="tab-pane active" id="pic-1"><img src={{product_images.0}} /></div>
+							{% endif %}
+							{% if product_images.1 %}
+							<div class="tab-pane" id="pic-2"><img src={{product_images.1}} /></div>
+							{% endif %}
+							{% if product_images.2 %}
+							<div class="tab-pane" id="pic-3"><img src={{product_images.2}} /></div>
+							{% endif %}
+							{% if product_images.3 %}
+							<div class="tab-pane" id="pic-4"><img src={{product_images.3}} /></div>
+							{% endif %}
+							{% if product_images.4 %}
+							<div class="tab-pane" id="pic-5"><img src={{product_images.4}} /></div>
+							{% endif %}
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+							{% if product_images.0 %}
+							<li class="active"><a data-target="#pic-1" data-toggle="tab"><img src={{product_images.0}} /></a></li>
+							{% endif %}
+							{% if product_images.1 %}
+							<li><a data-target="#pic-2" data-toggle="tab"><img src={{product_images.1}} /></a></li>
+							{% endif %}
+							{% if product_images.2 %}
+							<li><a data-target="#pic-3" data-toggle="tab"><img src={{product_images.2}} /></a></li>
+							{% endif %}
+							{% if product_images.3 %}
+							<li><a data-target="#pic-4" data-toggle="tab"><img src={{product_images.3}} /></a></li>
+							{% endif %}
+							{% if product_images.4 %}
+							<li><a data-target="#pic-5" data-toggle="tab"><img src={{product_images.4}} /></a></li>
+							{% endif %}
+						</ul>
+
+					</div>
+					{% for product in ad_details %}
+					<div class="details col-md-6">
+						<h3 class="product-title">{{product.ad_title}}</h3>
+						<div>
+							<div>
+								<span style="font-weight:bold;">Seller: </span> {{ product.user_data.first_name }} {{ product.user_data.last_name }}
+							</div>
+							<div>
+								<span style="font-weight:bold;">Email: </span> {{ product.user_data.user_email }}
+							</div>
+							<div>
+								<span style="font-weight:bold;">Mobile No: </span> {{ product.user_data.user_phone_no }}
+							</div>
+							<div>
+								<span style="font-weight:bold;">State: </span> {{ product.state }}
+							</div>
+							<div>
+								<span style="font-weight:bold;">City: </span> {{ product.city }}
+							</div>
+						</div>
+						<p style="margin-top:5px" class="product-description">{{ product.product_description }}</p>
+						<div style="position:relative; bottom:0%"><h4 class="price">price: <span>{{ product.price }}</span></h4></div>
+					</div>
+					{% endfor %}
+					<div class="col-md-6" style="margin-left:50%;">
+						<span style="font-weight:bold; text-decoration: underline">Attributes:</span>
+					{% for att in product_attributes %}
+						<div>
+							<span style="font-weight:bold;">{{att.attributes.attribute_name}}: </span> {{att.attribute_value}}
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
